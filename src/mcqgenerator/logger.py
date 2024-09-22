@@ -6,7 +6,10 @@ LOG_FILE = f"{datetime.now().strftime("%Y-%m-%d_%H%_M_%S")}.log"
 
 log_path = os.path.join(os.getcwd(),"log")
 
-os.mkdir(log_path,)
+if not os.path.exists(log_path):
+    os.mkdir(log_path)
+else:
+    print(f"Directory '{log_path}' already exists. Using it for logs.")
 
 LOG_FILE_PATH = os.path.join(log_path,LOG_FILE)
 
